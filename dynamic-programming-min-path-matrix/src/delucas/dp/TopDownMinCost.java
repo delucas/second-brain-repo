@@ -2,7 +2,6 @@ package delucas.dp;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 public class TopDownMinCost {
 	public static int minCost(final int[][] matrix, final int i, final int j) {

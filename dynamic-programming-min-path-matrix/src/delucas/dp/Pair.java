@@ -3,6 +3,7 @@ package delucas.dp;
 import java.util.Objects;
 
 public class Pair {
+	
 	int x;
 	int y;
 
