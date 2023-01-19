@@ -1,4 +1,5 @@
 package delucas.dp;
+
 public class OptimizedBottomUpMinCost {
 	public static int minCost(final int[][] matrix, final int i, final int j) {
 		int n = matrix.length;

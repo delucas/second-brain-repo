@@ -1,7 +1,7 @@
 package delucas.dp;
 
 public class OptimizedBottomUpHouseRobber {
-	public static int rob(int[] houses, int i) {
+	public static int rob(final int[] houses, final int i) {
 		int n = houses.length;
 
 		int prevPrev = houses[0];

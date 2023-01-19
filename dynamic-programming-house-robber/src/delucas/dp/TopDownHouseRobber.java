@@ -4,11 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TopDownHouseRobber {
-	public static int rob(int[] houses, int i) {
+	public static int rob(final int[] houses, final int i) {
 		return rob(houses, i, new HashMap<Integer, Integer>());
 	}
 	
-	public static int rob(int[] houses, int i, Map<Integer, Integer> mem) {
+	public static int rob(final int[] houses, final int i, final Map<Integer, Integer> mem) {
 		int n = houses.length;
 		
 		if (!mem.containsKey(i)) {

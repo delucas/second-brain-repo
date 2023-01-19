@@ -12,8 +12,7 @@ public class RecursiveMinCost {
 		} else if (j == m - 1) {
 			return matrix[i][j] + minCost(matrix, i + 1, j);
 		} else {
-			return matrix[i][j] +
-					Math.min(minCost(matrix, i + 1, j), minCost(matrix, i, j + 1));
+			return matrix[i][j] + Math.min(minCost(matrix, i + 1, j), minCost(matrix, i, j + 1));
 		}
 	}
 }
