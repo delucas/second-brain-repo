@@ -15,7 +15,7 @@ public class TopDownHouseRobber {
 			if (i >= n) {
 				mem.put(i, 0);
 			} else {
-				mem.put(i, Math.max(houses[i] + rob(houses, i + 2), rob(houses, i + 1)));
+				mem.put(i, Math.max(houses[i] + rob(houses, i + 2, mem), rob(houses, i + 1, mem)));
 			}
 		}
 		return mem.get(i);
