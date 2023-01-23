@@ -3,6 +3,8 @@ package delucas.dp;
 import java.util.HashMap;
 import java.util.Map;
 
+import delucas.utils.Pair;
+
 public class LongestCommonSubsequence {
 
 	public static int recursive(final String s1, final String s2, final int i, final int j) {
