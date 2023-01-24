@@ -3,6 +3,8 @@ package delucas.dp;
 import java.util.HashMap;
 import java.util.Map;
 
+import delucas.utils.Pair;
+
 public class TopDownMinCost {
 	public static int minCost(final int[][] matrix, final int i, final int j) {
 		return minCost(matrix, i, j, new HashMap<Pair, Integer>());

@@ -3,6 +3,8 @@ package delucas.dp;
 import java.util.HashMap;
 import java.util.Map;
 
+import delucas.utils.Pair;
+
 public class TopDownPathsInMatrix {
 
 	public static int paths(final int[][] matrix, final int i, final int j) {

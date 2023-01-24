@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+import delucas.utils.MyMath;
 import delucas.utils.Pair;
 
 public class GoldMine {
@@ -15,7 +16,7 @@ public class GoldMine {
 		for (int j = 0; j < m; j++) {
 			arr[j] = recursive(mine, 0, j);
 		}
-		return max(arr);
+		return MyMath.max(arr);
 	}
 
 	private static int recursive(final int[][] mine, final int i, final int j) {
@@ -23,7 +24,7 @@ public class GoldMine {
 		final int m = mine[0].length;
 
 		if (j < 0 || j >= m || i >= n) return 0;
-		else return mine[i][j] + max(new int[] {
+		else return mine[i][j] + MyMath.max(new int[] {
 				recursive(mine, i+1, j-1),
 				recursive(mine, i+1, j),
 				recursive(mine, i+1, j+1),
@@ -38,7 +39,7 @@ public class GoldMine {
 		for (int j = 0; j < m; j++) {
 			arr[j] = topDown(mine, 0, j, mem);
 		}
-		return max(arr);
+		return MyMath.max(arr);
 	}
 	
 	private static int topDown(final int[][] mine, final int i, final int j, final Map<Pair, Integer> mem) {
@@ -49,7 +50,7 @@ public class GoldMine {
 		
 		if (j < 0 || j >= m || i >= n)
 			mem.put(currentKey, 0);
-		else mem.put(currentKey, mine[i][j] + max(new int[] {
+		else mem.put(currentKey, mine[i][j] + MyMath.max(new int[] {
 				topDown(mine, i+1, j-1, mem),
 				topDown(mine, i+1, j, mem),
 				topDown(mine, i+1, j+1, mem),
@@ -79,7 +80,7 @@ public class GoldMine {
 			}
 		}
 		
-		return max(table[n-1]);
+		return MyMath.max(table[n-1]);
 	}
 	
 	public static int optimizedBottomUp(final int[][] mine) {
@@ -104,15 +105,6 @@ public class GoldMine {
 			table[0] = Arrays.copyOf(table[1], m);
 		}
 		
-		return max(table[1]);
-	}
-
-	// Utils
-	private static int max(final int[] arr) {
-		int max = 0;
-		for (int element : arr) {
-			max = Math.max(max, element);
-		}
-		return max;
+		return MyMath.max(table[1]);
 	}
 }
