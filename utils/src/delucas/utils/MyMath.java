@@ -16,4 +16,8 @@ public class MyMath {
 		}
 		return min;
 	}
+	
+	public static boolean between(int number, int low, int high) {
+		return low <= number && number <= high;
+	}
 }
