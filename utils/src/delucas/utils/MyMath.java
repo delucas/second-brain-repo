@@ -17,6 +17,14 @@ public class MyMath {
 		return min;
 	}
 	
+	public static int sum(final int[] xs) {
+		int sum = 0;
+		for (int i = 0; i < xs.length; i++) {
+			sum += xs[i];
+		}
+		return sum;
+	}
+	
 	public static boolean between(int number, int low, int high) {
 		return low <= number && number <= high;
 	}

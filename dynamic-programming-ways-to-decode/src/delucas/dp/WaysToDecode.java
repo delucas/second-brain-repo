@@ -44,10 +44,6 @@ public class WaysToDecode {
 	}
 	
 	public static int bottomUp(final String s) {
-		return bottomUp(s, 0);
-	}
-	
-	private static int bottomUp(final String s, final int idx) {
 		int n = s.length();
 		int[] table = new int[n];
 		
@@ -69,13 +65,11 @@ public class WaysToDecode {
 	}
 	
 	public static int optimizedBottomUp(final String s) {
-		return optimizedBottomUp(s, 0);
-	}
-	
-	private static int optimizedBottomUp(final String s, final int idx) {
 		int n = s.length();
 		
-		int prevPrev, prev, curr = 0;
+		int prevPrev;
+		int prev;
+		int curr = 0;
 		
 		if (s.charAt(0) == '0') return 0;
 		if (s.length() == 1) return 1;
@@ -93,8 +87,7 @@ public class WaysToDecode {
 			prevPrev = prev;
 			prev = curr;
 			curr = 0;
-		}		
-		
+		}
 		return prev;
 	}
 
