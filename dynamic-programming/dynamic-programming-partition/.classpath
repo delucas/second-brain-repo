@@ -9,6 +9,6 @@
 	<classpathentry kind="src" path="test"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="src" path="/utils"/>
-	<classpathentry kind="src" path="/dynamic-programming-subset-sum"/>
+	<classpathentry kind="src" path="/subset-sum"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
