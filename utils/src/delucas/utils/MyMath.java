@@ -28,4 +28,12 @@ public class MyMath {
 	public static boolean between(int number, int low, int high) {
 		return low <= number && number <= high;
 	}
+	
+	public static int fact(final int n) {
+		int res = 1;
+		for(int i = 1; i <= n; i++) {
+			res *= i;
+		}
+		return res;
+	}
 }
