@@ -1,7 +1,7 @@
+package delucas.dp;
+
 import org.junit.Assert;
 import org.junit.Test;
-
-import delucas.dp.WordBreak;
 
 public class WordBreakTests {
 
