@@ -25,6 +25,14 @@ public class MyMath {
 		return sum;
 	}
 	
+	public static long sum(final long[] xs) {
+		long sum = 0;
+		for (int i = 0; i < xs.length; i++) {
+			sum += xs[i];
+		}
+		return sum;
+	}
+	
 	public static boolean between(int number, int low, int high) {
 		return low <= number && number <= high;
 	}
