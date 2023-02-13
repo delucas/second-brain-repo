@@ -1,3 +1,5 @@
+package delucas.hackerrank;
+
 public class ClimbingTheLeaderboard {
 	public static int[] solve(int[] ranking, int[] player) {
 		int total = 1;
