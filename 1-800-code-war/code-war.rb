@@ -28,8 +28,8 @@ def string_to_number(s)
   s.chars.map { |c| NUMBER_BY_CHARS[c] }
 end
 
-# get the number for each possible word in WORDS
-WORDS_NUMBERS = WORDS.map { |word| string_to_number(word) }
+# get the number for each possible word in DICT
+DICT_NUMBERS = WORDS.map { |word| string_to_number(word) }
 
 def check1800(s)
   # remove dashes
@@ -40,12 +40,13 @@ def check1800(s)
   number = string_to_number(s)
 
   results = []
+
   # for each possible starting word, check if it matches the first half of the number
-  WORDS_NUMBERS.each_with_index do |word_number, i|
-    if word_number == number[0, word_number.length]
+  DICT_NUMBERS.each_with_index do |dict_number, i|
+    if dict_number == number[0, dict_number.length]
       # if the first half matches, search for the second half of the number
-      WORDS_NUMBERS.each_with_index do |word_number2, j|
-        if word_number2 == number[word_number.length, word_number2.length]
+      DICT_NUMBERS.each_with_index do |dict_number2, j|
+        if dict_number2 == number[dict_number.length, dict_number2.length] && WORDS[i].length != WORDS[j].length
           results << "1-800-#{WORDS[i]}-#{WORDS[j]}"
         end
       end
