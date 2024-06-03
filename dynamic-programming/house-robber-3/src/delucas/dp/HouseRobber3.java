@@ -14,11 +14,19 @@ public class HouseRobber3 {
 		}
 		
 		int rob = houses[i]
-				+ _recursiva(houses, (i*2+1)*2+1) + _recursiva(houses, (i*2+1)*2+2)
-				+ _recursiva(houses, (i*2+2)*2+1) + _recursiva(houses, (i*2+2)*2+2);
-		int noRob = 0 + _recursiva(houses, i*2+1) + _recursiva(houses, i*2+2);
+				+ _recursiva(houses, hijoIzquierdo(hijoIzquierdo(i))) + _recursiva(houses, hijoDerecho(hijoIzquierdo(i)))
+				+ _recursiva(houses, hijoIzquierdo(hijoDerecho(i))) + _recursiva(houses, hijoDerecho(hijoDerecho(i)));
+		int noRob = 0 + _recursiva(houses, hijoIzquierdo(i)) + _recursiva(houses, hijoDerecho(i));
 		
 		return Math.max(rob, noRob);
+	}
+
+	private static int hijoDerecho(int i) {
+		return i*2+2;
+	}
+
+	private static int hijoIzquierdo(int i) {
+		return i*2+1;
 	}
 	
 	public static int dinamica(int[] houses) {
@@ -37,8 +45,8 @@ public class HouseRobber3 {
 		}
 
 		int rob = houses[i]
-				+ _dinamica(houses, (i*2+1)*2+1, mem) + _dinamica(houses, (i*2+1)*2+2, mem)
-				+ _dinamica(houses, (i*2+2)*2+1, mem) + _dinamica(houses, (i*2+2)*2+2, mem);
+				+ _dinamica(houses, hijoIzquierdo(i)*2+1, mem) + _dinamica(houses, hijoIzquierdo(i)*2+2, mem)
+				+ _dinamica(houses, hijoDerecho(i)*2+1, mem) + _dinamica(houses, hijoDerecho(i)*2+2, mem);
 		int noRob = 0 + _dinamica(houses, i*2+1, mem) + _dinamica(houses, i*2+2, mem);
 		
 		mem.put(i, Math.max(rob, noRob));		

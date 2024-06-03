@@ -18,8 +18,8 @@ class HouseRobber3Tests {
 	void example02() {
 		int[] houses = { 3, 4, 5, 1, 3, -1, 1 };
 
-		assertEquals(7, HouseRobber3.recursiva(houses));
-		assertEquals(7, HouseRobber3.dinamica(houses));
+		assertEquals(9, HouseRobber3.recursiva(houses));
+		assertEquals(9, HouseRobber3.dinamica(houses));
 	}
 
 }
