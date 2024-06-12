@@ -65,6 +65,7 @@ class TestSolution < Minitest::Test
     assert_equal 1, ways_to_walk(1)
     assert_equal 11, ways_to_walk(2)
     assert_equal 291, ways_to_walk(3)
+    assert_equal 8547, ways_to_walk(4)
     assert_equal 259123, ways_to_walk(5)
   end
 end
